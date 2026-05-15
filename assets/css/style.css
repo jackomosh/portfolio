@@ -12093,7 +12093,8 @@ pre .code {
 .header .header-content .header-subtitle {
   font-size: calc(10px + (22 - 10) * ((100vw - 300px) / (1300 - 300)));
   letter-spacing: calc(0px + (7 - 1) * ((100vw - 300px) / (1300 - 300)));
-  opacity: .9;
+  opacity: .6;
+  color: #000000;
   margin-top: -10px;
   margin-bottom: 20px;
 }
