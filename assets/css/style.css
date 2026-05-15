@@ -12080,14 +12080,14 @@ pre .code {
   color: #444;
   margin-bottom: 5px;
   position: relative;
-  display: block;
+  display: flex;
 }
 
 .header .header-content .header-title .down {
   font-size: calc(30px + (75 - 30) * ((100vw - 300px) / (1300 - 300)));
   margin-bottom: 0;
   position: relative;
-  display: block;
+  display: flex;
 }
 
 .header .header-content .header-subtitle {
