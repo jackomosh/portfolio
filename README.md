@@ -20,9 +20,21 @@ I am a passionate **Fullstack Developer** and a **Creative Tech Innovator** with
 
 | Frontend | Backend & Tools |
 | :--- | :--- |
-| **languages:** HTML5, CSS3, JavaScript, Python, PHP, GO, Java | **Version Control:** Git, Github, Gitea |
-| **styling:** Tailwind CSS, Flexbox/Grid, Responsive Design | **IDE:** VS Code |
-| **frameworks:** React.js, Tailwind CSS, Bootstrap | **Design:** Canva, Figma, Webflow, WordPress, Figma, Framer, Wix |
+| **Languages:** HTML5, CSS3, JavaScript, Python, PHP, GO, Java | **Version Control:** Git, Github, Gitea |
+| **Styling:** Tailwind CSS, Flexbox/Grid, Responsive Design | **IDE:** VS Code |
+| **Frameworks:** React.js, Tailwind CSS, Bootstrap | **Design:** Canva, Figma, Webflow, WordPress, Figma, Framer, Wix |
 | **Databases:** SQL, noSQL | **Tool:** mySQL, mongoDB |
+
+---
+
+## 📂 Key Projects
+
+### 1. Personal Portfolio Website
+This website is built with a focus on simplicity yet interactive style using only HTML, CSS and a littele JavaScript
+- **Tech:** HTML, CSS (Fluid Typography/Calc), JavaScript
+
+### 2. My Consultancy Website
+This website is an improved version of my work as a Tech and IT consultant, it is detailed, unique and shows my skills as developer, just to serve as an example of how my skills have developed over the years. Of course you can reach out to me for any Consultancy work.
+- **Link:** [https://esafesystems.co.ke] (https://esafesystems.co.ke)
 
 ---
