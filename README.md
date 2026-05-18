@@ -2,7 +2,7 @@
 
 Welcome to the github repository for my personal portfolio website. This Portfolio showcases my projects, technical expertise and domain experience.
 
-**🌍 Live Demo:** [https://jackomosh.github.io/portfolio](https://jackomosh.github.io/portfolio/)
+**🌍 Live Demo:** [Click here to view my Portfolio](https://jackomosh.github.io/portfolio/)
 
 ---
 
