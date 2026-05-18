@@ -43,7 +43,7 @@ This website is an improved version of my work as a SaaS, Tech and IT consultant
 
 - **LinkedIn:** [Jack Omondi](https://linkedin.com/in/ogondajack)
 - **Github:** [@jackomosh](https://github.com/jackomosh)
-- **Email:** [jackomosh6@gmail.com](mailto:jackomosh6@gmail.com)
+- **Email:** [Mail Me](mailto:jackomosh6@gmail.com)
 
 ---
 
