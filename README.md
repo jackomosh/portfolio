@@ -11,7 +11,7 @@ Welcome to the github repository for my personal portfolio website. This Portfol
 I am a passionate **Fullstack Developer** and a **Creative Tech Innovator** with a passion on Digital Inclusion, Literacy and Transformation
 
 - 🔭 I'm currently working on enhancing User Experiences through Tailwind CSS, Bootstrap and modern frameworks
-- 🌱 I'm currently improving my skills in Backend Development using GO, Python, PHP, API, Cybersecurity and AI integrations and automations
+- 🌱 I'm also improving my skills in Backend Development using Go, Python, PHP, API, Cybersecurity and AI integrations and automations
 - 💬 Ask me about: **Responsive Design, CSS, JavaScript, AI, Software as a Service, Go, MySQL, APIs**
 
 ---
@@ -30,7 +30,7 @@ I am a passionate **Fullstack Developer** and a **Creative Tech Innovator** with
 ## 📂 Key Projects
 
 ### 1. Personal Portfolio Website
-This website is built with a focus on simplicity yet interactive style using only HTML, CSS and a littele JavaScript
+This website is built with a focus on simplicity yet interactive style using only HTML, CSS and a little JavaScript
 - **Tech:** HTML, CSS (Fluid Typography/Calc), JavaScript
 
 ### 2. My Consultancy Website
@@ -38,3 +38,19 @@ This website is an improved version of my work as a Tech and IT consultant, it i
 - **Link:** [https://esafesystems.co.ke](https://esafesystems.co.ke)
 
 ---
+
+## 🤝 Connect with me
+
+- **LinkedIn:** [Jack Omondi](https://linkedin.com/in/ogondajack)
+- **Github:** [@jackomosh](https://jackomosh.github.io/portfolio)
+- **Email:** [jackomosh6@gmail.com]
+
+---
+
+### 🚀 How to checkout my portfolio
+
+1. **Vist the URL:**
+
+```bash
+visit url [https://jackomosh.github.io/portfolio](https://jackomosh.github.io/portfolio)
+
