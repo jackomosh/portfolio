@@ -35,6 +35,6 @@ This website is built with a focus on simplicity yet interactive style using onl
 
 ### 2. My Consultancy Website
 This website is an improved version of my work as a Tech and IT consultant, it is detailed, unique and shows my skills as developer, just to serve as an example of how my skills have developed over the years. Of course you can reach out to me for any Consultancy work.
-- **Link:** [https://esafesystems.co.ke] (https://esafesystems.co.ke)
+- **Link:** [https://esafesystems.co.ke](https://esafesystems.co.ke)
 
 ---
