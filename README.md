@@ -52,5 +52,5 @@ This website is an improved version of my work as a Tech and IT consultant, it i
 1. **Vist the URL:**
 
 ```bash
-visit url [https://jackomosh.github.io/portfolio](https://jackomosh.github.io/portfolio)
+https://jackomosh.github.io/portfolio
 
