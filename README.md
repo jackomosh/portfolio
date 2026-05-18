@@ -49,7 +49,7 @@ This website is an improved version of my work as a SaaS, Tech and IT consultant
 
 ### 🚀 How to checkout my portfolio
 
-1. **Vist the URL:**
+1. **Visit the URL:**
 
 ```bash
 https://jackomosh.github.io/portfolio
