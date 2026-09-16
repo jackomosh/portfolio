@@ -8,10 +8,55 @@
     <meta name="author" content="Jack Omondi">
     <title>404 - Page Not Found | Jack's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico">
+    
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + main styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom CSS for 404 Responsiveness & Enhancements -->
+    <style>
+        /* Responsive adjustments for mobile viewports */
+        .error-title {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .error-subtitle {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        @media (max-width: 768px) {
+            .error-title {
+                font-size: 3.5rem;
+            }
+
+            .error-heading {
+                font-size: 1.5rem;
+            }
+
+            .custom-navbar .nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #fff;
+                padding: 15px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+
+            .custom-navbar .nav.show {
+                display: flex !important;
+            }
+
+            .custom-navbar .nav .item {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -20,7 +65,7 @@
     <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
         <div class="container">
             <a class="logo" href="index.html">Jack</a>
-            <ul class="nav">
+            <ul class="nav" id="nav-menu">
                 <li class="item">
                     <a class="link" href="index.html#home">Home</a>
                 </li>
@@ -37,6 +82,11 @@
                     <a href="assets/Jack_T.pdf" target="_blank" class="btn btn-primary">RESUME</a>
                 </li>
             </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </a>
         </div>
     </nav><!-- End of Page Navbar -->
 
@@ -44,11 +94,11 @@
     <header class="header">
         <div class="overlay"></div>
         <div class="header-content container text-center">
-            <h1 class="header-title" style="font-size: 5rem; margin-bottom: 10px;">
+            <h1 class="header-title error-title">
                 <span class="up">404 &#129300;</span>
             </h1>
-            <h2 class="text-white mb-3">Oops! Page Not Found</h2>
-            <p class="header-subtitle m-auto" style="max-width: 600px;">
+            <h2 class="text-white mb-3 error-heading">Oops! Page Not Found</h2>
+            <p class="header-subtitle error-subtitle">
                 The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
             </p>
             <div class="mt-4">
@@ -75,6 +125,19 @@
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <!-- Custom JavaScript for Interactive Mobile Navigation -->
+    <script>
+        $(document.ready || function(fn){ if (document.readyState !== 'loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } })(function() {
+            // Mobile hamburger toggle logic
+            $('#nav-toggle').on('click', function() {
+                $(this).toggleClass('is-active');
+                $('#nav-menu').toggleClass('show');
+            });
+
+            // How to verify: Resize the screen below 768px in DevTools, click the mobile menu toggle button, and confirm the navigation menu slides into view or toggles smoothly.
+        });
+    </script>
 
 </body>
 
