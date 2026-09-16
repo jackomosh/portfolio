@@ -9,33 +9,247 @@
     <title>404 - Page Not Found | Jack's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico">
     
-    <!-- font icons -->
+    <!-- Font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + main styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Custom CSS for 404 Responsiveness & Enhancements -->
+    <!-- Embedded Custom CSS replacing external style.css -->
     <style>
-        /* Responsive adjustments for mobile viewports */
+        :root {
+            --primary-color: #695aa6;
+            --primary-hover: #574894;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: #6c757d;
+            background-color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Container Layout */
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) { .container { max-width: 540px; } }
+        @media (min-width: 768px) { .container { max-width: 720px; } }
+        @media (min-width: 992px) { .container { max-width: 960px; } }
+        @media (min-width: 1200px) { .container { max-width: 1140px; } }
+
+        /* Navbar */
+        .custom-navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            padding: 15px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .custom-navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .custom-navbar .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .custom-navbar .nav {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+        }
+
+        .custom-navbar .nav .item .link {
+            padding: 8px 15px;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .custom-navbar .nav .item .link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            padding: 10px 24px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: #fff;
+        }
+
+        .btn-rounded {
+            border-radius: 30px;
+        }
+
+        /* Hamburger Toggle Button */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger-box {
+            width: 28px;
+            height: 20px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+            width: 100%;
+            height: 3px;
+            background-color: var(--dark-color);
+            border-radius: 4px;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-inner { top: 50%; transform: translateY(-50%); }
+        .hamburger-inner::before { content: ""; top: -8px; left: 0; }
+        .hamburger-inner::after { content: ""; bottom: -8px; left: 0; }
+
+        .hamburger.is-active .hamburger-inner { background-color: transparent; }
+        .hamburger.is-active .hamburger-inner::before { transform: rotate(45deg); top: 0; }
+        .hamburger.is-active .hamburger-inner::after { transform: rotate(-45deg); bottom: 0; }
+
+        /* Header / Hero Section */
+        .header {
+            position: relative;
+            background-image: url('assets/imgs/header.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(33, 37, 41, 0.75);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            padding: 20px 15px;
+        }
+
         .error-title {
-            font-size: 5rem;
+            font-size: 5.5rem;
+            font-weight: 700;
             margin-bottom: 10px;
             line-height: 1.1;
+            color: var(--primary-color);
+        }
+
+        .error-heading {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .error-subtitle {
             max-width: 600px;
-            margin: 0 auto;
-            padding: 0 15px;
+            margin: 0 auto 25px auto;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
         }
 
-        @media (max-width: 768px) {
-            .error-title {
-                font-size: 3.5rem;
-            }
+        /* Footer */
+        .footer {
+            padding: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #e9ecef;
+            margin-top: auto;
+            font-size: 14px;
+        }
 
-            .error-heading {
-                font-size: 1.5rem;
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .social-links a {
+            color: #6c757d;
+            margin-left: 15px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
             }
 
             .custom-navbar .nav {
@@ -44,7 +258,8 @@
                 width: 100%;
                 background-color: #fff;
                 padding: 15px 0;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                margin-top: 15px;
+                border-top: 1px solid #f1f1f1;
             }
 
             .custom-navbar .nav.show {
@@ -55,6 +270,24 @@
                 margin: 10px 0;
                 text-align: center;
             }
+
+            .error-title {
+                font-size: 3.8rem;
+            }
+
+            .error-heading {
+                font-size: 1.5rem;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .social-links a {
+                margin: 0 8px;
+            }
         }
     </style>
 </head>
@@ -62,7 +295,7 @@
 <body>
 
     <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+    <nav class="custom-navbar">
         <div class="container">
             <a class="logo" href="index.html">Jack</a>
             <ul class="nav" id="nav-menu">
@@ -78,30 +311,28 @@
                 <li class="item">
                     <a class="link" href="index.html#contact">Contact</a>
                 </li>
-                <li class="item ml-md-3">
+                <li class="item" style="margin-left: 10px;">
                     <a href="assets/Jack_T.pdf" target="_blank" class="btn btn-primary">RESUME</a>
                 </li>
             </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+            <button href="javascript:void(0)" id="nav-toggle" class="hamburger" aria-label="Toggle navigation">
                 <div class="hamburger-box">
                     <div class="hamburger-inner"></div>
                 </div>
-            </a>
+            </button>
         </div>
     </nav><!-- End of Page Navbar -->
 
-    <!-- Error Header -->
+    <!-- Error Header Section -->
     <header class="header">
         <div class="overlay"></div>
-        <div class="header-content container text-center">
-            <h1 class="header-title error-title">
-                <span class="up">404 &#129300;</span>
-            </h1>
-            <h2 class="text-white mb-3 error-heading">Oops! Page Not Found</h2>
-            <p class="header-subtitle error-subtitle">
+        <div class="header-content container">
+            <h1 class="error-title">404 &#129300;</h1>
+            <h2 class="error-heading">Oops! Page Not Found</h2>
+            <p class="error-subtitle">
                 The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
             </p>
-            <div class="mt-4">
+            <div>
                 <a href="index.html" class="btn btn-primary btn-rounded">Return Home</a>
             </div>
         </div>
@@ -112,30 +343,27 @@
         <footer class="footer">
             <p class="mb-0">Copyright
                 <script>document.write(new Date().getFullYear())</script> &copy; <a
-                    href="index.html">Jack the Developer </a>
+                    href="index.html">Jack the Developer</a>
             </p>
-            <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="https://www.linkedin.com/in/ogondajack/" class="link"><i class="ti-linkedin"></i></a>
-                <a href="https://github.com/jackomosh" class="link"><i class="ti-github"></i></a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ogondajack/" target="_blank"><i class="ti-linkedin"></i></a>
+                <a href="https://github.com/jackomosh" target="_blank"><i class="ti-github"></i></a>
             </div>
         </footer>
     </div> <!-- End of Footer -->
 
-    <!-- Core -->
+    <!-- Core JavaScript -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-    <script src="assets/js/script.js"></script>
 
-    <!-- Custom JavaScript for Interactive Mobile Navigation -->
+    <!-- Custom Navigation JavaScript -->
     <script>
-        $(document.ready || function(fn){ if (document.readyState !== 'loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } })(function() {
-            // Mobile hamburger toggle logic
-            $('#nav-toggle').on('click', function() {
+        $(document).ready(function() {
+            // Mobile hamburger navigation toggle
+            $('#nav-toggle').on('click', function(e) {
+                e.preventDefault();
                 $(this).toggleClass('is-active');
                 $('#nav-menu').toggleClass('show');
             });
-
-            // How to verify: Resize the screen below 768px in DevTools, click the mobile menu toggle button, and confirm the navigation menu slides into view or toggles smoothly.
         });
     </script>
 
