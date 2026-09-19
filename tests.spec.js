@@ -27,6 +27,11 @@ test.describe('Portfolio Website Tests', () => {
 
   test('Navigation menu links are functional', async ({ page }) => {
     await page.goto(INDEX_PATH);
+
+    // Click the nav toggle button to open the menu
+    await page.locator('#nav-toggle').click();
+
+    // Assert that the about link is now visible
     const aboutLink = page.locator('a[href="#about"]');
     await expect(aboutLink).toBeVisible();
   });
