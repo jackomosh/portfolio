@@ -482,6 +482,25 @@
 
     <!-- Animated Text, Skeleton Loader & Scroll Animation Script -->
     <script>
+
+        // Dismiss skeleton screen when DOM is ready or fully loaded
+function hideSkeleton() {
+    var skeleton = document.getElementById('skeleton-screen');
+    if (skeleton && skeleton.style.display !== 'none') {
+        skeleton.style.opacity = '0';
+        setTimeout(function () {
+            skeleton.style.display = 'none';
+        }, 300);
+    }
+}
+
+if (document.readyState === 'complete') {
+    hideSkeleton();
+} else {
+    window.addEventListener('load', hideSkeleton);
+    document.addEventListener('DOMContentLoaded', hideSkeleton);
+}
+
         // Skeleton loader dismissal
         window.addEventListener('load', function () {
             var skeleton = document.getElementById('skeleton-screen');
