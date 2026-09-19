@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + main styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--  PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#695aa6">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -530,6 +534,17 @@
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             animatedElements.forEach(el => observer.observe(el));
         });
+    </script>
+
+    // PWA
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
+            .catch((err) => console.log('Service Worker registration failed:', err));
+        });
+    }
     </script>
 
 </body>
