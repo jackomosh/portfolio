@@ -1,6 +1,6 @@
 {
-  "short_name": "Jack Portfolio",
-  "name": "Jack's Portfolio | Technical Support",
+  "short_name": "Jack's Portfolio",
+  "name": "Jack's Portfolio",
   "icons": [
     {
       "src": "assets/imgs/icon-192.png",
@@ -13,7 +13,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/portfolio/index.html",
+  "scope": "/portfolio/",
   "background_color": "#ffffff",
   "theme_color": "#695aa6",
   "display": "standalone"
