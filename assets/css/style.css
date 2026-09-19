@@ -12086,9 +12086,12 @@ pre .code {
 
 .header .header-content .header-title .down {
   font-size: calc(30px + (75 - 30) * ((100vw - 300px) / (1300 - 300)));
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   position: relative;
   display: block;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .header .header-content .header-subtitle {
