@@ -547,6 +547,97 @@
     }
     </script>
 
+    <!-- Top Compact PWA Install Popup -->
+    <div id="pwa-install-modal" class="card shadow-lg" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 320px; z-index: 9999; border-radius: 12px; background: #ffffff; border: 1px solid #e0e0e0;">
+        <div class="card-body text-center p-3" style="position: relative;">
+            <!-- "X" Cancel Button -->
+            <button id="pwa-close-btn" aria-label="Close" style="position: absolute; top: 6px; right: 10px; background: none; border: none; font-size: 18px; line-height: 1; color: #888; cursor: pointer;">&times;</button>
+            
+            <h6 class="card-title mb-1" style="color: #695aa6; font-weight: 300; font-size: 15px;">Install App</h6>
+            <p class="card-text text-muted mb-2" style="font-size: 12px;">Install this app on your device for quick access and offline browsing..</p>
+            
+            <!-- Centered Install Button with 10px border-radius -->
+            <div class="text-center">
+                <button id="pwa-accept-btn" class="btn btn-primary btn-sm px-4" style="border-radius: 0; font-weight: 300;">Install</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    let deferredPrompt;
+    let autoDismissTimer;
+
+    const installModal = document.getElementById('pwa-install-modal');
+    const acceptBtn = document.getElementById('pwa-accept-btn');
+    const closeBtn = document.getElementById('pwa-close-btn');
+
+    function hideModalWithFade() {
+        if (!installModal || installModal.style.display === 'none') return;
+        
+        // Switch animation class to fade out
+        installModal.classList.remove('pwa-fade-in');
+        installModal.classList.add('pwa-fade-out');
+
+        // Wait for animation to finish before setting display: none
+        setTimeout(() => {
+            installModal.style.display = 'none';
+            installModal.classList.remove('pwa-fade-out');
+        }, 400);
+
+        // Clear active timeout
+        if (autoDismissTimer) {
+            clearTimeout(autoDismissTimer);
+        }
+    }
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+
+        if (installModal) {
+            installModal.style.display = 'block';
+            installModal.classList.add('pwa-fade-in');
+
+            // Automatically hide after 15 seconds
+            autoDismissTimer = setTimeout(() => {
+                hideModalWithFade();
+            }, 9000);
+        }
+    });
+
+    // Trigger install dialog on button click
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            if (!deferredPrompt) return;
+
+            hideModalWithFade();
+
+            deferredPrompt.prompt();
+
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted PWA installation');
+                } else {
+                    console.log('User dismissed PWA installation');
+                }
+                deferredPrompt = null;
+            });
+        });
+    }
+
+    // Close popup via "X" button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            hideModalWithFade();
+        });
+    }
+
+    // Hide if app is already installed
+    window.addEventListener('appinstalled', () => {
+        hideModalWithFade();
+    });
+    </script>
+
 </body>
 
 </html>
