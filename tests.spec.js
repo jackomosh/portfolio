@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const path = require('path');
 
-test.use({ channel: 'chrome' });
+// test.use({ channel: 'chrome' });
 
 const INDEX_PATH = `file://${path.resolve('index.html')}`;
 const NOT_FOUND_PATH = `file://${path.resolve('404.html')}`;
