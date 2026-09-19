@@ -12234,3 +12234,21 @@ pre .code {
     color: #FFFFFF; /* Bright gold for extra contrast over dark header overlay */
     border-radius: 20px;
 }
+
+@keyframes pwaFadeIn {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes pwaFadeOut {
+    from { opacity: 1; transform: translate(-50%, 0); }
+    to { opacity: 0; transform: translate(-50%, -10px); }
+}
+
+.pwa-fade-in {
+    animation: pwaFadeIn 0.4s ease-out forwards;
+}
+
+.pwa-fade-out {
+    animation: pwaFadeOut 0.4s ease-in forwards;
+}
