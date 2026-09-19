@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Welcome to the github repository for my personal portfolio website. This Portfolio showcases my projects, technical expertise and domain experience.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "htmlhint index.html 404.html",
+    "check-links": "linkinator index.html 404.html --recurse",
+    "test:e2e": "playwright test",
+    "test": "npm run lint && npm run check-links"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "htmlhint": "^1.9.2",
+    "linkinator": "^6.0.5",
+    "serve": "^14.2.6"
+  }
+}
