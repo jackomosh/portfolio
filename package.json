@@ -15,7 +15,7 @@
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "htmlhint": "^1.9.2",
-    "linkinator": "^8.1.0",
+    "linkinator": "^6.0.5",
     "serve": "^14.2.6"
   }
 }
