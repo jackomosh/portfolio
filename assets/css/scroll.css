@@ -1,0 +1,42 @@
+/* ==========================================
+   1. GLOBAL SMOOTH SCROLLING TRANSITION
+   ========================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset section targets so header nav doesn't cover top titles when scrolling */
+section[id], header[id] {
+  scroll-margin-top: 70px;
+}
+
+/* ==========================================
+   2. "MY WORK" BUTTON TRANSITION & HOVER
+   ========================================== */
+.header .header-content .btn-primary {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Link element fills button clickable area cleanly */
+.header .header-content .btn-primary a {
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Hover: Lift button, deepen background color & soft primary shadow glow */
+.header .header-content .btn-primary:hover {
+  background-color: #554788;
+  border-color: #554788;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(105, 90, 166, 0.4);
+}
+
+/* Click / Active state: Press feedback */
+.header .header-content .btn-primary:active {
+  transform: translateY(-1px) scale(0.97);
+  box-shadow: 0 4px 10px rgba(105, 90, 166, 0.25);
+}
