@@ -40,3 +40,390 @@ section[id], header[id] {
   transform: translateY(-1px) scale(0.97);
   box-shadow: 0 4px 10px rgba(105, 90, 166, 0.25);
 }
+
+/* ==========================================================
+MOBILE RESPONSIVE OVERRIDE
+Based on the existing index.html structure
+========================================================== */
+
+@media (max-width: 991.98px) {
+
+```
+/* ------------------------------------------------------
+   1. Prevent horizontal page overflow
+   ------------------------------------------------------ */
+
+html,
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+body {
+    position: relative !important;
+}
+
+
+/* ------------------------------------------------------
+   2. Keep all main containers inside the viewport
+   ------------------------------------------------------ */
+
+.container,
+.container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+
+/* ------------------------------------------------------
+   3. Mobile navbar
+   ------------------------------------------------------ */
+
+.custom-navbar {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.custom-navbar .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.custom-navbar .logo {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+}
+
+/* Keep hamburger inside the viewport */
+.custom-navbar .hamburger {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    max-width: 50px !important;
+    box-sizing: border-box !important;
+}
+
+.custom-navbar .hamburger-box {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Mobile navigation dropdown */
+.custom-navbar .nav {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+.custom-navbar .nav .item {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.custom-navbar .nav .link {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+}
+
+
+/* ------------------------------------------------------
+   4. Header / hero section
+   ------------------------------------------------------ */
+
+.header,
+.header-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.header-content {
+    overflow-x: hidden !important;
+}
+
+.header-title,
+.header-subtitle {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+}
+
+.header .header-content .animated-text-container {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+}
+
+
+/* ------------------------------------------------------
+   5. About section
+   ------------------------------------------------------ */
+
+.about {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.about-img-holder {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.room-scaler {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+}
+
+.room {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.about-caption {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+}
+
+
+/* ------------------------------------------------------
+   6. Images
+   ------------------------------------------------------ */
+
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+}
+
+
+/* ------------------------------------------------------
+   7. Bootstrap rows / columns
+   ------------------------------------------------------ */
+
+.row {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+[class*="col-"] {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+
+/* ------------------------------------------------------
+   8. Portfolio
+   ------------------------------------------------------ */
+
+.portfolio-card {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.portfolio-card-img {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+}
+
+
+/* ------------------------------------------------------
+   9. Pricing cards
+   ------------------------------------------------------ */
+
+.pricing-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+.pricing-card {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+
+/* ------------------------------------------------------
+   10. Blog cards
+   ------------------------------------------------------ */
+
+.blog-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.blog-card-img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+
+/* ------------------------------------------------------
+   11. Testimonials
+   ------------------------------------------------------ */
+
+.testimonial-card {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+
+/* ------------------------------------------------------
+   12. Contact form
+   ------------------------------------------------------ */
+
+.contact-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.form-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.form-control {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+
+/* ------------------------------------------------------
+   13. Footer
+   ------------------------------------------------------ */
+
+.footer {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+
+/* ------------------------------------------------------
+   14. Long text protection
+   ------------------------------------------------------ */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+}
+
+
+/* ------------------------------------------------------
+   15. PWA install popup
+   ------------------------------------------------------ */
+
+#pwa-install-modal {
+    width: 90% !important;
+    max-width: 320px !important;
+    box-sizing: border-box !important;
+    left: 50% !important;
+    right: auto !important;
+}
+```
+
+}
+
+/* ==========================================================
+EXTRA SMALL DEVICES
+========================================================== */
+
+@media (max-width: 576px) {
+
+```
+.custom-navbar .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+
+.header-content {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.section .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+}
+
+.room-scaler {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.about-caption {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+```
+
+}
