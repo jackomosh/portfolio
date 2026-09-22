@@ -658,38 +658,6 @@
     });
     </script>
 
-    
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const subtitle = document.querySelector('.header .header-content .header-subtitle');
-        if (!subtitle) return;
-
-        // 1. Get raw text and convert every character to a <span>
-        const text = subtitle.textContent;
-        subtitle.textContent = ''; // Clear original text
-
-        const letters = text.split('').map((char, index) => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            // Stagger animation delay across characters (0.05s per letter)
-            span.style.animationDelay = `${(index * 0.05).toFixed(2)}s`;
-            subtitle.appendChild(span);
-            return span;
-        });
-
-        // 2. Trigger zoom-out intro
-        subtitle.classList.add('zoom-out-active');
-
-        // 3. Start letter wave animations once zoom-out completes (1.2s)
-        setTimeout(() => {
-            letters.forEach(span => {
-                span.style.animationPlayState = 'running';
-            });
-        }, 1200);
-    });
-    </script>
-
 </body>
 
 </html>
