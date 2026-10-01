@@ -12450,3 +12450,37 @@ section {
     }
   }
 }
+
+
+/* Responsive navbar improvement: desktop links inline, mobile hamburger unchanged. */
+@media (min-width: 992px) {
+  .custom-navbar .hamburger {
+    display: none;
+  }
+
+  .custom-navbar .nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-left: auto;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .custom-navbar .nav .item {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .custom-navbar .hamburger {
+    display: block;
+  }
+}
