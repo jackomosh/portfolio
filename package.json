@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "htmlhint index.html 404.html",
-    "check-links": "linkinator index.html 404.html --recurse",
+    "check-links": "linkinator index.html 404.html --recurse --skip 'https://cdn.simpleicons.org/*'",
     "test:e2e": "playwright test",
     "test": "npm run lint && npm run check-links"
   },
