@@ -16,6 +16,7 @@
     margin-bottom: 2rem;
     cursor: pointer;
     transition: color 0.3s ease;
+    font-size: 30px;
 }
 
 .tech-stack-heading:hover {
