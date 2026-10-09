@@ -1,0 +1,210 @@
+
+/* ==============================
+   Tech Stack Marquee
+============================== */
+
+.tech-stack-marquee {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto 90px;
+    padding: 20px 15px 0;
+    box-sizing: border-box;
+}
+
+/* Heading: match the other portfolio section headings */
+.tech-stack-heading {
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.tech-stack-heading:hover {
+    color: #695aa6;
+}
+
+/* Marquee viewport */
+.tech-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 18px 0 22px;
+    box-sizing: border-box;
+}
+
+/* Moving track */
+.tech-marquee-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    animation: tech-marquee-scroll 40s linear infinite;
+    will-change: transform;
+}
+
+/* Each group of technology logos */
+.tech-marquee-group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 35px;
+    padding: 0 35px 0 0;
+}
+
+/* Individual technology */
+.tech-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 8px;
+    min-width: 75px;
+    padding: 10px 8px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: inherit;
+    font-size: 12px;
+    color: inherit;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(0) scale(1);
+    transform-origin: center;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Pop out the entire item on hover */
+.tech-item:hover {
+    transform: translateY(-5px) scale(1.1);
+    background-color: rgba(105, 90, 166, 0.08);
+    box-shadow: 0 8px 20px rgba(105, 90, 166, 0.16);
+    z-index: 5;
+}
+
+/* Technology logos */
+.tech-item img {
+    display: block;
+    width: 35px !important;
+    height: 35px !important;
+    max-width: none !important;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover img {
+    transform: scale(1.06);
+}
+
+/* Technology labels */
+.tech-item span {
+    display: block;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.tech-item:hover span {
+    color: #695aa6;
+}
+
+/* Continuous scrolling */
+@keyframes tech-marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause scrolling while interacting with the marquee */
+.tech-marquee:hover .tech-marquee-track {
+    animation-play-state: paused;
+}
+
+/* Match Bootstrap container widths */
+@media (max-width: 1199.98px) {
+    .tech-stack-marquee {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .tech-stack-marquee {
+        max-width: 720px;
+        margin-bottom: 75px;
+    }
+
+    .tech-marquee-group {
+        gap: 28px;
+        padding-right: 28px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .tech-stack-marquee {
+        max-width: 540px;
+        margin-bottom: 65px;
+        padding-top: 15px;
+    }
+
+    .tech-stack-heading {
+        margin-bottom: 16px;
+    }
+
+    .tech-marquee {
+        padding-top: 16px;
+        padding-bottom: 20px;
+    }
+
+    .tech-marquee-group {
+        gap: 22px;
+        padding-right: 22px;
+    }
+
+    .tech-item {
+        min-width: 65px;
+        padding: 8px 6px;
+        font-size: 11px;
+    }
+
+    .tech-item img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .tech-stack-marquee {
+        max-width: 100%;
+        margin-bottom: 55px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .tech-marquee-group {
+        gap: 18px;
+        padding-right: 18px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .tech-marquee-track {
+        animation: none;
+        transform: none;
+    }
+
+    .tech-item,
+    .tech-item img,
+    .tech-item span {
+        transition: none;
+    }
+
+    .tech-item:hover {
+        transform: none;
+    }
+}
