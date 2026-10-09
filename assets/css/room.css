@@ -1,34 +1,77 @@
-
 /* ==========================================================================
-   Animated Room Styles (Scoped to prevent global keyframe and layout conflicts)
+   Animated Room Styles
+   Scoped to prevent global keyframe and layout conflicts
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+/* ==========================================================================
+   Room Wrapper and Alignment
+   ========================================================================== */
 
 .about-img-holder {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-right: 25px;
+    padding: 0;
+    margin: 0 auto 30px;
+    box-sizing: border-box;
+}
+
+.room-scaler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .room {
     position: relative;
-    display: inline-block;
-    width: 500px;
+    display: block;
+    width: 100%;
+    max-width: 500px;
     height: 430px;
     overflow: hidden;
     margin: 0 auto;
-    background: #73627d;
+    box-sizing: border-box;
+    background-color: #73627d;
     background-image:
-        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+        repeating-linear-gradient(
+            120deg,
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.1) 1px,
+            transparent 1px,
+            transparent 60px
+        ),
+        repeating-linear-gradient(
+            60deg,
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.1) 1px,
+            transparent 1px,
+            transparent 60px
+        ),
+        linear-gradient(
+            60deg,
+            rgba(0,0,0,.1) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(0,0,0,.1) 75%,
+            rgba(0,0,0,.1)
+        ),
+        linear-gradient(
+            120deg,
+            rgba(0,0,0,.1) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(0,0,0,.1) 75%,
+            rgba(0,0,0,.1)
+        );
     background-size: 20px 25px;
     border-radius: 7px;
-    max-width: 100%;
 }
 
 .room:before {
@@ -41,13 +84,20 @@
     background: #333;
 }
 
-/* Strictly target elements ONLY inside .room */
+/* ==========================================================================
+   Common Room Elements
+   ========================================================================== */
+
 .room * {
     border-radius: 7px;
     background: #000;
     position: absolute;
     box-sizing: content-box;
 }
+
+/* ==========================================================================
+   Window and Outside Light
+   ========================================================================== */
 
 .room .window {
     overflow: hidden;
@@ -58,15 +108,29 @@
     background: #76c2ff;
     animation: room_outsidelight 12s linear infinite;
     border: 1vmin solid #000;
-    border-radius: 0vmin;
+    border-radius: 0;
 }
 
-@keyframes room_outsidelight { 
-    0% { background: #3F51B5; }
-    45% { background: #3F51B5; }
-    50% { background: #76c2ff; }
-    95% { background: #76c2ff; }
-    100% { background: #3F51B5; }
+@keyframes room_outsidelight {
+    0% {
+        background: #3F51B5;
+    }
+
+    45% {
+        background: #3F51B5;
+    }
+
+    50% {
+        background: #76c2ff;
+    }
+
+    95% {
+        background: #76c2ff;
+    }
+
+    100% {
+        background: #3F51B5;
+    }
 }
 
 .room .outside {
@@ -79,25 +143,32 @@
 }
 
 @keyframes room_sunmoon {
-    0% { 
+    0% {
         left: -30px;
         top: -30px;
         box-shadow: inset -1vmin -1vmin #fff;
     }
-    50% { 
+
+    50% {
         left: 120px;
         top: 120px;
         box-shadow: inset 0vmin -1vmin #fff;
     }
-    50.001% { 
+
+    50.001% {
         left: -30px;
         top: -30px;
-        box-shadow: inset 0vmin 0vmin 0vmin 5vmin #fff, 0vmin 0vmin 3vmin #fff; 
+        box-shadow:
+            inset 0vmin 0vmin 0vmin 5vmin #fff,
+            0vmin 0vmin 3vmin #fff;
     }
-    100% { 
+
+    100% {
         left: 120px;
         top: 120px;
-        box-shadow: inset 0vmin 0vmin 0vmin 5vmin #fff, 0vmin 0vmin 3vmin #fff; 
+        box-shadow:
+            inset 0vmin 0vmin 0vmin 5vmin #fff,
+            0vmin 0vmin 3vmin #fff;
     }
 }
 
@@ -109,7 +180,7 @@
     height: 105px;
     background: #000;
     left: 48px;
-    top: 0px;
+    top: 0;
 }
 
 .room .window:before {
@@ -119,9 +190,13 @@
     width: 100px;
     height: 5px;
     background: #000;
-    left: 0px;
+    left: 0;
     top: 50px;
 }
+
+/* ==========================================================================
+   Programmer Character
+   ========================================================================== */
 
 .room .hand {
     height: 42px;
@@ -132,14 +207,15 @@
     transform: rotate(30deg);
 }
 
-.room .hand:after, .room .hand:before {
+.room .hand:after,
+.room .hand:before {
     content: '';
     display: block;
     position: absolute;
     background: #000;
     border-radius: 5px;
     top: 34px;
-    right: 0px;
+    right: 0;
     width: 13px;
     height: 37px;
     transform: rotate(60deg);
@@ -175,7 +251,8 @@
     transform: rotate(67deg);
 }
 
-.room .leg:after, .room .leg:before {
+.room .leg:after,
+.room .leg:before {
     content: '';
     display: block;
     position: absolute;
@@ -196,7 +273,8 @@
     border-radius: 50%;
 }
 
-.room .head:after, .room .head:before {
+.room .head:after,
+.room .head:before {
     z-index: 1;
     content: '';
     display: block;
@@ -211,12 +289,18 @@
 }
 
 @keyframes room_blink {
-    100% { height: 1px; }
+    100% {
+        height: 1px;
+    }
 }
 
 .room .head:before {
     left: 10px;
 }
+
+/* ==========================================================================
+   Bed
+   ========================================================================== */
 
 .room .bed:before {
     content: '';
@@ -237,7 +321,7 @@
     background: #2d2320;
     border-radius: 5px;
     top: -25px;
-    right: 0px;
+    right: 0;
     width: 25px;
     height: 50px;
 }
@@ -248,8 +332,12 @@
     right: 22px;
     top: 255px;
     background: #2d2320;
-    box-shadow: inset 50px 105px 0px -85px #e0e0e0;
+    box-shadow: inset 50px 105px 0 -85px #e0e0e0;
 }
+
+/* ==========================================================================
+   Table and Computer
+   ========================================================================== */
 
 .room .table {
     width: 90px;
@@ -257,7 +345,7 @@
     left: 23px;
     top: 227px;
     background: #2d2320;
-    box-shadow: inset 89px 57px 0px -68px #7b5d52;
+    box-shadow: inset 89px 57px 0 -68px #7b5d52;
 }
 
 .room .desktop:before {
@@ -286,22 +374,16 @@
     border-radius: 10px;
 }
 
+/* ==========================================================================
+   Chair
+   ========================================================================== */
+
 .room .chair {
     height: 15px;
     width: 50px;
     left: 129px;
     top: 247px;
     border-radius: 10px;
-}
-
-.room .description {
-    background: transparent;
-    text-align: center;
-    width: 100%;
-    bottom: 10px;
-    font-size: 19px;
-    color: #aaa;
-    font-family: 'Indie Flower', cursive;
 }
 
 .room .chair:before {
@@ -328,8 +410,12 @@
     transform: rotate(-70deg);
     background: #000;
     border-radius: 10px;
-    box-shadow: -75px -20px 0px -2px #000;
+    box-shadow: -75px -20px 0 -2px #000;
 }
+
+/* ==========================================================================
+   Clock
+   ========================================================================== */
 
 .room .clock {
     background: #fff;
@@ -363,7 +449,8 @@
     animation-delay: 2s;
 }
 
-.room .clock:before, .room .clock:after {
+.room .clock:before,
+.room .clock:after {
     transform-origin: bottom center;
     animation-name: room_dial;
     left: 16px;
@@ -374,9 +461,18 @@
 }
 
 @keyframes room_dial {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
+/* ==========================================================================
+   Computer Screen
+   ========================================================================== */
 
 .room .desktop {
     display: block;
@@ -386,21 +482,101 @@
     top: 183px;
     transform: rotate(80deg);
     background: #000;
-    border-radius: 0px 0px 53px 53px;
+    border-radius: 0 0 53px 53px;
     border-bottom-left-radius: 53px 17px;
     border-bottom-right-radius: 53px 17px;
     animation: room_screen 0.1s linear infinite;
 }
 
 @keyframes room_screen {
-    0% { box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.4); }
-    100% { box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, 0.6); }
+    0% {
+        box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.6);
+    }
 }
 
-/* Scaling down automatically on smaller viewports */
+/* ==========================================================================
+   Room Description
+   ========================================================================== */
+
+.room .description {
+    background: transparent;
+    text-align: center;
+    width: 100%;
+    bottom: 10px;
+    font-size: 19px;
+    color: #aaa;
+    font-family: 'Indie Flower', cursive;
+}
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+
 @media (max-width: 576px) {
+    .about-img-holder {
+        padding: 0 12px;
+        margin-bottom: 24px;
+    }
+
+    .room-scaler {
+        width: 100%;
+        max-width: 500px;
+    }
+
     .room {
-        transform: scale(0.7);
-        transform-origin: center center;
+        width: 100%;
+        height: 350px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .room *,
+    .room .window,
+    .room .outside,
+    .room .hand:after,
+    .room .hand:before,
+    .room .head:after,
+    .room .head:before,
+    .room .clock:before,
+    .room .clock:after,
+    .room .desktop {
+        animation: none !important;
+    }
+}
+
+
+/* Add spacing between the animated room and About content */
+.about-img-holder {
+    margin-bottom: 45px;
+}
+
+.about-caption {
+    margin-top: 20px;
+}
+
+/* Adjust spacing on smaller screens */
+@media (max-width: 576px) {
+    .about-img-holder {
+        margin-bottom: 30px;
+    }
+
+    .about-caption {
+        margin-top: 10px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .about-img-holder {
+        padding-right: 25px;
+    }
+
+    .about-caption {
+        padding-left: 25px;
     }
 }
